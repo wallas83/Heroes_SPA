@@ -1,14 +1,15 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { Navbar } from './ui'
+import { AppRoute } from './routes/AppRoute'
+
 
 export const HeroesApp = () => {
   return (
     <>  
         
-        <Navbar/>
+        {/* <Navbar/>
         {/* <hr/> */}
-        <Outlet/>
+        {/* <Outlet/>  */}
+        <AppRoute/>
     </>
   )
 }

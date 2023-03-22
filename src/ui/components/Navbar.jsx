@@ -1,7 +1,15 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
 export const Navbar = () => {
+    //la documentacion recomienda usar redirect instead of useNavigate veremos que pasas despues 
+    const navigate = useNavigate();
+    const onLogout = () => {
+       navigate('/login',  {
+        //esto hace que remplazce la ruta qne que se encuentra
+        replace: true 
+       });
+    }
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
 
@@ -28,19 +36,37 @@ export const Navbar = () => {
                     >
                         DC
                     </NavLink>
+
+                    <NavLink
+                        className={({ isActive }) =>
+                            `nav-link nav-item ${isActive ? "active" : ""}`
+                        }
+                        to="/hero"
+                    >
+                        Hero
+                    </NavLink>
+                    <NavLink
+                        className={({ isActive }) =>
+                            `nav-link nav-item ${isActive ? "active" : ""}`
+                        }
+                        to="/search"
+                    >
+                        Search
+                    </NavLink>
                 </div>
             </div>
 
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span className=' nav-item nav-link text-primary'>
-                                Wilson
+                        Wilson
                     </span>
 
                     <button
-                            className='nav-item nav-link btn text-primary'
+                        className='nav-item nav-link btn text-primary'
+                        onClick={onLogout}
                     >
-                            Logout
+                        Logout
                     </button>
 
 
