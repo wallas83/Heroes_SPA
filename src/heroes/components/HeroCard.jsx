@@ -11,7 +11,7 @@ export const HeroCard = ({
 }) => {
     const heroImageUrl = `/assets/heroes/${id}.jpg`
     return (
-         <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-3'>
+         <div className='row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 '>
             <div className='col animate__animated animate__fadeIn'>
                 <div className='card shadow mb-2'>
                     <div className='row no-gutters'>
