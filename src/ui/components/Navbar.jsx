@@ -4,11 +4,12 @@ import { AuthContext } from '../../auth/context/AuthContext';
 
 
 export const Navbar = () => {
-    const { user } = useContext( AuthContext );
+    const { user, logout } = useContext( AuthContext );
 
     //la documentacion recomienda usar redirect instead of useNavigate veremos que pasas despues 
     const navigate = useNavigate();
     const onLogout = () => {
+        logout();
        navigate('/login',  {
         //esto hace que remplazce la ruta qne que se encuentra
         replace: true 
